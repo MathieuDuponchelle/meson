@@ -2926,4 +2926,6 @@ if __name__ == '__main__':
     elif is_windows():
         cases += ['WindowsTests']
 
+    cases = ['AllPlatformTests.test_forcefallback']
+
     unittest.main(defaultTest=cases, buffer=True)
