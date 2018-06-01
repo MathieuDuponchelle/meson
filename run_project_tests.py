@@ -399,8 +399,9 @@ def _run_test(testdir, test_build_dir, install_dir, extra_args, compiler, backen
 
 def gather_tests(testdir: Path):
     tests = [t.name for t in testdir.glob('*')]
-    testlist = [(int(t.split()[0]), t) for t in tests]
+    testlist = [(int(t.split()[0]), t) for t in tests if t.startswith('200')]
     testlist.sort()
+    print (testlist)
     tests = [testdir / t[1] for t in testlist]
     return tests
 
